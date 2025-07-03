@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags (default: English) -->
-    <title>Monster Survivors – Free Epic Survival Game | DongGame Online</title>
-    <meta name="description" content="Play Monster Survivors online for free! Battle relentless waves of monsters, upgrade your hero and survive in this fast‑paced action game – no download required." />
-    <link rel="canonical" href="https://donggame.online/monster-survivors" />
+    <title>DongGame - 100% Free Browser Games, No Downloads Required | Play Instantly</title>
+    <meta name="description" content="Experience truly free online games without in-app purchases or downloads. Instant browser gaming across all devices. Join millions enjoying our curated collection of action, puzzle & strategy games!" />
+    <link rel="canonical" href="https://donggame.online/" />
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index,follow" />
     <!-- Google Search Console verification (replace XXXXX with your code) -->
@@ -22,38 +22,29 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://donggame.online/monster-survivors" />
-    <meta property="og:title" content="Monster Survivors – Free Epic Survival Game | DongGame Online" />
-    <meta property="og:description" content="Play Monster Survivors in your browser: survive endless monster waves, collect power‑ups and climb the leaderboard!" />
+    <meta property="og:url" content="https://donggame.online/" />
+    <meta property="og:title" content="DongGame - 100% Free Browser Games, No Hidden Costs | Play Now" />
+    <meta property="og:description" content="Play genuinely free online games - no in-app purchases, no downloads needed. Instant access to quality games across all devices. Start gaming now!" />
     <meta property="og:image" content="https://donggame.online/assets/monster-survivors-og.jpg" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Monster Survivors – Free Epic Survival Game | DongGame Online" />
-    <meta name="twitter:description" content="Play now – upgrade your hero & defeat hordes of monsters in this addictive survival shooter!" />
+    <meta name="twitter:title" content="DongGame - 100% Free Browser Games, No Hidden Costs | Play Now" />
+    <meta name="twitter:description" content="Experience truly free gaming without any catches. No downloads, no in-app purchases - just pure gaming fun in your browser!" />
     <meta name="twitter:image" content="https://donggame.online/assets/monster-survivors-og.jpg" />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "VideoGame",
-        "name": "Monster Survivors",
-        "url": "https://donggame.online/monster-survivors",
-        "image": "https://donggame.online/assets/monster-survivors-og.jpg",
-        "genre": ["Action", "Survival"],
-        "operatingSystem": "Web Browser",
-        "applicationCategory": "Game",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
+        "@type": "WebSite",
+        "name": "DongGame - Free Online Games",
+        "url": "https://donggame.online/",
+        "description": "A curated collection of 100% free browser games with no in-app purchases. Play instantly across all devices without downloads. Experience pure gaming fun with our selection of action, puzzle, and strategy games.",
         "publisher": {
           "@type": "Organization",
           "name": "DongGame"
-        },
-        "description": "Monster Survivors is a browser‑based action survival game. Fight waves of monsters, gather power‑ups and see how long you can last!"
+        }
       }
     </script>
 
@@ -75,23 +66,204 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+      :root {
+        --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        --wave-gradient: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+      }
+      
       body {
         font-family: "Inter", sans-serif;
-        background-color: #f5f5f7;
+        background-color: #0a0a0a;
+        color: #fff;
       }
-      .game-container {
-        aspect-ratio: 16/9;
+
+      /* 波浪背景动画 */
+      .wave-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--wave-gradient);
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .wave {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: rgba(99, 102, 241, 0.1);
+        border-radius: 40%;
+        transform-origin: 50% 48%;
+        animation: wave 12s infinite linear;
+      }
+
+      .wave-2 {
+        background: rgba(168, 85, 247, 0.1);
+        animation: wave 16s infinite linear;
+      }
+
+      .wave-3 {
+        background: rgba(99, 102, 241, 0.05);
+        animation: wave 20s infinite linear;
+      }
+
+      @keyframes wave {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      /* 导航栏样式 */
+      .nav-container {
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* 主标题区域样式 */
+      .hero-section {
+        min-height: calc(100vh - 80px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+      }
+
+      .hero-content {
         max-width: 1200px;
         margin: 0 auto;
+        z-index: 1;
       }
-      .iframe-portal {
+
+      .hero-badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        color: #a855f7;
+        margin-bottom: 2rem;
+      }
+
+      .hero-title {
+        font-size: 4rem;
+        font-weight: 800;
+        line-height: 1.1;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        color: #94a3b8;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-bottom: 4rem;
+      }
+
+      .cta-primary {
+        padding: 1rem 2rem;
+        background: var(--primary-gradient);
+        border-radius: 9999px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .cta-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+      }
+
+      .cta-secondary {
+        padding: 1rem 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 9999px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .cta-secondary:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .trust-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        color: #94a3b8;
+      }
+
+      .avatar-group {
+        display: flex;
+        margin-right: 1rem;
+      }
+
+      .avatar-group img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #0a0a0a;
+        margin-left: -1rem;
+      }
+
+      .avatar-group img:first-child {
+        margin-left: 0;
+      }
+
+      /* 游戏容器样式 */
+      .game-container {
+        max-width: 100%;  /* 改为100%宽度 */
+        margin: 0;  /* 移除外边距 */
+        min-height: 100vh;  /* 设置最小高度为视口高度 */
+        display: flex;
+        flex-direction: column;
+        border-radius: 0;  /* 移除圆角 */
+      }
+
+      /* 全屏模式样式 */
+      .game-container:fullscreen {
+        max-width: 100%;
         width: 100%;
-        height: 80vh;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background: #000;
+        display: flex;
+        flex-direction: column;
       }
-      @media (max-width: 640px) {
-        .iframe-portal {
-          height: 60vh;
+
+      .game-container:fullscreen iframe {
+        width: 100%;
+        height: 100% !important;
+        border: none;
+        flex: 1;
+      }
+
+      @media (max-width: 768px) {
+        .game-container {
+          margin: 0;
         }
+        .game-container iframe {
+          height: calc(100vh - 60px) !important;  /* 减去控制栏高度 */
+        }
+      }
+
+      /* 控制栏样式 */
+      .game-controls {
+        height: 60px;  /* 固定控制栏高度 */
+        min-height: 60px;  /* 确保最小高度 */
       }
     </style>
 
@@ -109,40 +281,371 @@
   <body class="min-h-screen flex flex-col" x-data="langSwitcher()" x-init="init()" :class="{ 'lang-zh': lang === 'zh', 'lang-en': lang === 'en' }">
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-white focus:ring-2 focus:ring-indigo-600 focus:px-4 focus:py-2">Skip to content</a>
 
-    <!-- Header -->
-    <header class="bg-white/90 backdrop-blur shadow-sm sticky top-0 z-50">
-      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center" aria-label="Primary Navigation">
-        <a href="/" class="text-2xl font-bold text-gray-900">DongGame</a>
+    <!-- 波浪背景 -->
+    <div class="wave-bg">
+      <div class="wave"></div>
+      <div class="wave wave-2"></div>
+      <div class="wave wave-3"></div>
+    </div>
+
+    <!-- 导航栏 -->
+    <header class="nav-container">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <a href="/" class="text-2xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">DongGame</a>
         <ul class="hidden md:flex space-x-8 text-sm font-medium">
-          <li><a href="#about" class="hover:text-indigo-600" data-i18n="nav_about">About</a></li>
-          <li><a href="#gameplay" class="hover:text-indigo-600" data-i18n="nav_guide">Guide</a></li>
-          <li><a href="#play" class="hover:text-indigo-600" data-i18n="nav_play">Play</a></li>
+          <li><a href="#about" class="text-gray-300 hover:text-white transition-colors" data-i18n="nav_about">About</a></li>
+          <li><a href="#gameplay" class="text-gray-300 hover:text-white transition-colors" data-i18n="nav_guide">Guide</a></li>
+          <li><a href="#play" class="text-gray-300 hover:text-white transition-colors" data-i18n="nav_play">Play</a></li>
         </ul>
-        <!-- Language toggle -->
-        <button id="lang-toggle" @click="toggle()" class="ml-4 text-sm px-3 py-1.5 rounded-md border border-gray-300 hover:bg-gray-100">
+        <button id="lang-toggle" @click="toggle()" class="ml-4 text-sm px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
           <span data-i18n="btn_lang">中文</span>
         </button>
       </nav>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-badge" data-i18n="hero_badge">🎮 NO DOWNLOADS, NO LIMITS</div>
+        <h1 class="hero-title">
+          <span data-i18n="hero_title_1">Pure Gaming Joy</span><br>
+          <span data-i18n="hero_title_2">No Hidden Costs</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero_desc">Experience our curated collection of truly free games - no in-app purchases, no downloads, just instant fun across all your devices!</p>
+        
+        <div class="cta-buttons">
+          <a href="#play" class="cta-primary" data-i18n="cta_primary">Play Now</a>
+          <button class="cta-secondary" onclick="document.querySelector('#mainGameFrame').requestFullscreen()" data-i18n="cta_secondary">Full Screen</button>
+        </div>
+
+        <div class="trust-badge">
+          <div class="avatar-group">
+            <img src="https://api.dicebear.com/6.x/avataaars/svg?seed=1" alt="User avatar" />
+            <img src="https://api.dicebear.com/6.x/avataaars/svg?seed=2" alt="User avatar" />
+            <img src="https://api.dicebear.com/6.x/avataaars/svg?seed=3" alt="User avatar" />
+          </div>
+          <div>
+            <span class="text-yellow-400">★★★★★</span>
+            <span data-i18n="trust_badge">Join millions of happy gamers</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Main -->
     <main id="main" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <!-- Hero -->
-      <section class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-5 tracking-tight">Monster Survivors</h1>
-        <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="hero_desc">Battle endless waves of monsters, collect power‑ups and test your survival limits.</p>
-      </section>
-
       <!-- Crawlable Introduction Text (EN + ZH) -->
       <section class="max-w-3xl mx-auto mb-16 space-y-6 text-gray-700 leading-relaxed">
-        <p>Monster Survivors is more than a simple shooter – it is a test of strategy and stamina. Each round introduces new enemy types, random power‑ups and upgrade paths that drastically change the way you fight. Whether you are a casual gamer looking for a quick 5‑minute challenge or a hardcore player aiming to top the global leaderboard, this game scales to your skill level.</p>
-        <p>《Monster Survivors》不仅仅是“打打怪”那么简单，更考验玩家的策略思维与持久战能力。每一波都会刷新不同类型的怪物与随机增益道具，合理选择升级路线能让你在危急时刻扭转战局。无论你是想利用碎片时间快速体验，还是追求全球排行榜的极限分数，这款游戏都能满足你的需求。</p>
+        <p>Welcome to DongGame - where gaming is truly free! We believe in pure gaming enjoyment without the frustration of in-app purchases or micro-transactions. Every game in our collection is complete and fully playable without any hidden costs. Just click and play instantly in your browser, no matter what device you're using.</p>
+        <p>欢迎来到DongGame - 真正免费的游戏平台！我们坚信游戏的乐趣不应被内购和微交易所困扰。我们精心挑选的每一款游戏都是完整版本，无需任何隐藏付费。无论您使用什么设备，只需点击即可在浏览器中畅玩。</p>
       </section>
 
       <!-- Game iframes -->
       <section id="play" class="space-y-12" aria-labelledby="play-heading">
         <h2 id="play-heading" class="sr-only">Play Monster Survivors</h2>
 
-        <!-- Original game iframe -->
-        <div class="game-container bg-white rounded-2xl shadow-lg overflow-hidden ring-1 ring-gray-200">
-          <iframe src="https
+        <!-- 游戏界面 -->
+        <div class="game-container bg-black overflow-hidden">
+          <!-- 游戏控制栏 -->
+          <div class="game-controls flex justify-between items-center px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+            <div class="flex space-x-2 ml-auto">  <!-- 将按钮移到右侧 -->
+              <button onclick="refreshGame()" class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded text-sm transition-colors">
+                🔄 刷新
+              </button>
+              <button onclick="toggleFullscreen()" class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded text-sm transition-colors">
+                🔲 全屏
+              </button>
+            </div>
+          </div>
+          
+          <!-- 改进的iframe -->
+          <iframe 
+            id="mainGameFrame"
+            src="https://freegames.org" 
+            class="w-full flex-1" 
+            style="height: calc(100vh - 60px) !important; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"
+            frameborder="0" 
+            allowfullscreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-downloads"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          
+          <!-- 加载状态指示器 -->
+          <div id="loadingIndicator" class="absolute inset-0 bg-gray-100 flex items-center justify-center" style="display: none;">
+            <div class="text-center">
+              <div class="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-500 mx-auto mb-4"></div>
+              <p class="text-gray-600">正在加载游戏...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="mb-16">
+        <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent" data-i18n="about_title">为什么选择我们</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white/5 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-purple-500/30 transition-all duration-300 group">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white text-xl">🎮</div>
+              <h3 class="text-xl font-semibold ml-4 group-hover:text-purple-400 transition-colors" data-i18n="gameplay_title">即时游戏</h3>
+            </div>
+            <p class="text-gray-300 leading-relaxed group-hover:text-white transition-colors" data-i18n="gameplay_desc">无需下载，浏览器直接畅玩。告别等待和存储困扰，所有设备都能享受纯粹的游戏乐趣。</p>
+          </div>
+          <div class="bg-white/5 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-purple-500/30 transition-all duration-300 group">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white text-xl">⭐</div>
+              <h3 class="text-xl font-semibold ml-4 group-hover:text-purple-400 transition-colors" data-i18n="features_title">我们的承诺</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center text-gray-300 group-hover:text-white transition-colors">
+                <span class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center mr-3 text-purple-400">💎</span>
+                <span data-i18n="feature_1">完全免费 - 无隐藏收费和内购</span>
+              </li>
+              <li class="flex items-center text-gray-300 group-hover:text-white transition-colors">
+                <span class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center mr-3 text-purple-400">🌐</span>
+                <span data-i18n="feature_2">随处可玩 - 全平台兼容</span>
+              </li>
+              <li class="flex items-center text-gray-300 group-hover:text-white transition-colors">
+                <span class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center mr-3 text-purple-400">🚀</span>
+                <span data-i18n="feature_3">无需下载 - 即点即玩</span>
+              </li>
+              <li class="flex items-center text-gray-300 group-hover:text-white transition-colors">
+                <span class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center mr-3 text-purple-400">🎯</span>
+                <span data-i18n="feature_4">持续更新 - 每周新游戏</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Game Guide -->
+      <section id="gameplay" class="mb-16">
+        <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent" data-i18n="guide_title">游戏攻略</h2>
+        <div class="bg-white/5 backdrop-blur-lg p-8 rounded-2xl border border-white/10">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="group">
+              <div class="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-2 hover:bg-gradient-to-r hover:from-indigo-500/20 hover:to-purple-500/20">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center mx-auto mb-6">
+                  <span class="text-2xl">🎯</span>
+                </div>
+                <h3 class="font-semibold mb-4 text-xl text-white group-hover:text-purple-400 transition-colors" data-i18n="tip_1_title">选择游戏</h3>
+                <p class="text-gray-400 group-hover:text-gray-300 transition-colors" data-i18n="tip_1_desc">浏览我们精选的优质游戏</p>
+              </div>
+            </div>
+            <div class="group">
+              <div class="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-2 hover:bg-gradient-to-r hover:from-indigo-500/20 hover:to-purple-500/20">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center mx-auto mb-6">
+                  <span class="text-2xl">🚀</span>
+                </div>
+                <h3 class="font-semibold mb-4 text-xl text-white group-hover:text-purple-400 transition-colors" data-i18n="tip_2_title">即刻开玩</h3>
+                <p class="text-gray-400 group-hover:text-gray-300 transition-colors" data-i18n="tip_2_desc">点击即玩，无需下载等待</p>
+              </div>
+            </div>
+            <div class="group">
+              <div class="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-2 hover:bg-gradient-to-r hover:from-indigo-500/20 hover:to-purple-500/20">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center mx-auto mb-6">
+                  <span class="text-2xl">🎮</span>
+                </div>
+                <h3 class="font-semibold mb-4 text-xl text-white group-hover:text-purple-400 transition-colors" data-i18n="tip_3_title">尽享乐趣</h3>
+                <p class="text-gray-400 group-hover:text-gray-300 transition-colors" data-i18n="tip_3_desc">完整游戏体验，绝无隐藏收费</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p>&copy; 2024 DongGame. All rights reserved.</p>
+        <p class="text-sm text-gray-400 mt-2">
+          <span data-i18n="footer_desc">Your destination for truly free online gaming</span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Alpine.js for language switching -->
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    
+    <!-- Language switching logic -->
+    <script>
+      function langSwitcher() {
+        return {
+          lang: 'en', // 默认语言：英文
+          
+          // 初始化函数：检查URL参数设置语言
+          init() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+            if (langParam === 'zh') {
+              this.lang = 'zh';
+            }
+            this.updateContent();
+          },
+          
+          // 切换语言函数
+          toggle() {
+            this.lang = this.lang === 'en' ? 'zh' : 'en';
+            this.updateContent();
+            // 更新URL参数但不刷新页面
+            const url = new URL(window.location);
+            if (this.lang === 'zh') {
+              url.searchParams.set('lang', 'zh');
+            } else {
+              url.searchParams.delete('lang');
+            }
+            window.history.replaceState({}, '', url);
+          },
+          
+          // 更新页面内容
+          updateContent() {
+            const translations = {
+              en: {
+                nav_about: "About",
+                nav_guide: "How It Works", 
+                nav_play: "Play Now",
+                btn_lang: "中文",
+                hero_badge: "🎮 NO DOWNLOADS, NO LIMITS",
+                hero_title_1: "Pure Gaming Joy",
+                hero_title_2: "No Hidden Costs",
+                hero_desc: "Experience our curated collection of truly free games - no in-app purchases, no downloads, just instant fun across all your devices!",
+                cta_primary: "Play Now",
+                cta_secondary: "Full Screen",
+                trust_badge: "Join millions of happy gamers",
+                about_title: "Why Choose Us",
+                gameplay_title: "Instant Gaming",
+                gameplay_desc: "Skip the downloads and play instantly in your browser. No waiting, no storage issues, just pure gaming fun across all your devices.",
+                features_title: "Our Promise",
+                feature_1: "• 100% Free - No hidden costs or in-app purchases",
+                feature_2: "• Play anywhere - Works on all devices",
+                feature_3: "• No downloads - Start playing instantly",
+                feature_4: "• Regular updates - New games added weekly",
+                guide_title: "How It Works",
+                tip_1_title: "Choose Your Game",
+                tip_1_desc: "Browse our curated collection of quality games",
+                tip_2_title: "Instant Play",
+                tip_2_desc: "Click and play immediately - no downloads needed",
+                tip_3_title: "Have Fun",
+                tip_3_desc: "Enjoy complete games with no hidden costs",
+                main_game: "🎮 Free Games Collection",
+                footer_desc: "Your destination for truly free online gaming"
+              },
+              zh: {
+                nav_about: "关于我们",
+                nav_guide: "玩法介绍",
+                nav_play: "开始游戏", 
+                btn_lang: "English",
+                hero_badge: "🎮 无需下载，即刻畅玩",
+                hero_title_1: "纯粹的游戏乐趣",
+                hero_title_2: "绝无隐藏收费",
+                hero_desc: "体验我们精心挑选的免费游戏 - 无内购，无下载，所有设备即点即玩！",
+                cta_primary: "立即开玩",
+                cta_secondary: "全屏模式",
+                trust_badge: "加入百万快乐玩家",
+                about_title: "为什么选择我们",
+                gameplay_title: "即时游戏",
+                gameplay_desc: "无需下载，浏览器直接畅玩。告别等待和存储困扰，所有设备都能享受纯粹的游戏乐趣。",
+                features_title: "我们的承诺",
+                feature_1: "• 完全免费 - 无隐藏收费和内购",
+                feature_2: "• 随处可玩 - 全平台兼容",
+                feature_3: "• 无需下载 - 即点即玩",
+                feature_4: "• 持续更新 - 每周新游戏",
+                guide_title: "游戏攻略",
+                tip_1_title: "选择游戏",
+                tip_1_desc: "浏览我们精选的优质游戏",
+                tip_2_title: "即刻开玩",
+                tip_2_desc: "点击即玩，无需下载等待",
+                tip_3_title: "尽享乐趣",
+                tip_3_desc: "完整游戏体验，绝无隐藏收费",
+                main_game: "🎮 免费游戏精选",
+                footer_desc: "您的免费在线游戏乐园"
+              }
+            };
+            
+            // 更新所有带有data-i18n属性的元素
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+              const key = element.getAttribute('data-i18n');
+              if (translations[this.lang][key]) {
+                element.textContent = translations[this.lang][key];
+              }
+            });
+          }
+        }
+      }
+      
+      // 游戏控制功能
+      function refreshGame() {
+        const frame = document.getElementById('mainGameFrame');
+        const loading = document.getElementById('loadingIndicator');
+        
+        loading.style.display = 'flex';
+        frame.style.display = 'none';
+        
+        // 重新加载iframe
+        frame.src = frame.src;
+        
+        frame.onload = function() {
+          loading.style.display = 'none';
+          frame.style.display = 'block';
+        };
+      }
+      
+      function toggleFullscreen() {
+        const gameContainer = document.querySelector('.game-container');
+        
+        if (!document.fullscreenElement) {
+          gameContainer.requestFullscreen().catch(err => {
+            alert(`无法进入全屏模式: ${err.message}`);
+          });
+        } else {
+          document.exitFullscreen();
+        }
+      }
+      
+      // 监听全屏状态变化
+      document.addEventListener('fullscreenchange', function() {
+        const button = document.querySelector('button[onclick="toggleFullscreen()"]');
+        const gameContainer = document.querySelector('.game-container');
+        const iframe = document.getElementById('mainGameFrame');
+        
+        if (document.fullscreenElement) {
+          button.innerHTML = '🗗 退出全屏';
+          // 确保iframe在全屏模式下占满整个容器
+          iframe.style.height = '100vh';
+          gameContainer.style.height = '100vh';
+        } else {
+          button.innerHTML = '🔲 全屏';
+          // 恢复正常高度
+          iframe.style.height = '';
+          gameContainer.style.height = '';
+        }
+      });
+      
+      // 平滑滚动到锚点
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
+        });
+        
+        // 游戏加载监听
+        const gameFrame = document.getElementById('mainGameFrame');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        
+        gameFrame.addEventListener('load', function() {
+          loadingIndicator.style.display = 'none';
+        });
+      });
+    </script>
+  </body>
+</html>
